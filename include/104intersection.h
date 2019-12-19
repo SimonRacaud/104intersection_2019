@@ -11,6 +11,7 @@
 #define EXIT_ERROR 84
 
 #include "arguments.h"
+#include "intersection.h"
 
 #include <iostream>
 #include <string>

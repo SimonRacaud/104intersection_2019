@@ -29,6 +29,7 @@ int usage(int status)
 int main(int argc, char **argv)
 {
     Arguments arg;
+    Intersection intersection;
 
     if (argc == 2 && !strcmp(argv[1], "-h"))
         return usage(EXIT_SUCCESS);

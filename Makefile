@@ -7,9 +7,11 @@
 
 DSRC	=	./src/
 
-SRC	=	$(DSRC)main.cpp		\
-		$(DSRC)argument.cpp \
-		$(DSRC)intersection.cpp
+SRC	=	$(DSRC)main.cpp					\
+		$(DSRC)argument.cpp 			\
+		$(DSRC)intersection.cpp 		\
+		$(DSRC)intersection_display.cpp \
+		$(DSRC)intersection_calcul.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 

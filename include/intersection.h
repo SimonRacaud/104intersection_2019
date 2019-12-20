@@ -22,6 +22,7 @@ class Intersection
         Intersection(void);
         ~Intersection(void) = default;
         int compute(Argument &arg);
+        int display(void);
 
     private:
         int calcul_lambda(double a, double b, double c, Argument &arg);
@@ -30,6 +31,10 @@ class Intersection
         int calcul_abc_cylinder(Argument &arg);
         int calcul_abc_sphere(Argument &arg);
         int calcul_abc_cone(Argument &arg);
+        void display_line_one(void);
+        void display_line_two(void);
+        void display_intersection(void);
+        Argument *m_arg;
         double m_a;
         double m_b;
         double m_c;

@@ -44,7 +44,7 @@ int main(int argc, char **argv)
         if (intersection.compute(arg) == EXIT_ERROR) {
             return EXIT_ERROR;
         } else {
-            // DISPLAY
+            intersection.display();
         }
     }
     return EXIT_SUCCESS;

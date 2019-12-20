@@ -10,14 +10,15 @@
 
 #include "104intersection.h"
 
-class Arguments
+class Argument
 {
     public:
-        Arguments();
+        Argument();
+        ~Argument() = default;
         int set_arguments(int argc, char **argv);
         int get_object_type(void) const;
-        const int *get_point(void) const;
-        const int *get_vector(void) const;
+        const coord_t *get_point(void) const;
+        const coord_t *get_vector(void) const;
         int get_radius_angle(void) const;
 
     private:
@@ -25,8 +26,8 @@ class Arguments
         int convert_and_set_arguments(char **argv);
         int check_arguments_value(void) const;
         int m_type_object;
-        int m_point[3];
-        int m_vector[3];
+        coord_t m_point;
+        coord_t m_vector;
         int m_radius_angle;
 };
 

@@ -5,21 +5,15 @@
 ** get and check the arguments of the programme
 */
 
-#include "arguments.h"
+#include "argument.h"
 
 using namespace std;
 
-Arguments::Arguments()
+Argument::Argument()
 {
-    m_type_object = -1;
-    for (int i = 0; i < 3; i++) {
-        m_point[i] = 0;
-        m_vector[i] = 0;
-    }
-    m_radius_angle = 0;
 }
 
-int Arguments::set_arguments(int argc, char **argv)
+int Argument::set_arguments(int argc, char **argv)
 {
     if (argc != 9) {
         cerr << "ERROR: Please give nine numbers as arguements" << endl;
@@ -41,7 +35,7 @@ int Arguments::set_arguments(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int Arguments::str_is_number(char *str) const
+int Argument::str_is_number(char *str) const
 {
     for (int i = 0; str[i] != '\0'; i++) {
         if ((str[i] < '0' || str[i] > '9') && str[i] != '-')
@@ -50,42 +44,42 @@ int Arguments::str_is_number(char *str) const
     return 1;
 }
 
-int Arguments::convert_and_set_arguments(char **argv)
+int Argument::convert_and_set_arguments(char **argv)
 {
     m_type_object = atoi(argv[1]);
-    m_point[0] = atoi(argv[2]);
-    m_point[1] = atoi(argv[3]);
-    m_point[2] = atoi(argv[4]);
-    m_vector[0] = atoi(argv[5]);
-    m_vector[1] = atoi(argv[6]);
-    m_vector[2] = atoi(argv[7]);
+    m_point.x = atoi(argv[2]);
+    m_point.y = atoi(argv[3]);
+    m_point.y = atoi(argv[4]);
+    m_vector.x = atoi(argv[5]);
+    m_vector.y = atoi(argv[6]);
+    m_vector.z = atoi(argv[7]);
     m_radius_angle = atoi(argv[8]);
     return EXIT_SUCCESS;
 }
 
-int Arguments::check_arguments_value(void) const
+int Argument::check_arguments_value(void) const
 {
     if (m_type_object > 3 || m_type_object < 1)
         return EXIT_ERROR;
     return EXIT_SUCCESS;
 }
 
-const int *Arguments::get_point(void) const
+const coord_t *Argument::get_point(void) const
 {
-    return m_point;
+    return &m_point;
 }
 
-const int *Arguments::get_vector(void) const
+const coord_t *Argument::get_vector(void) const
 {
-    return m_vector;
+    return &m_vector;
 }
 
-int Arguments::get_radius_angle(void) const
+int Argument::get_radius_angle(void) const
 {
     return m_radius_angle;
 }
 
-int Arguments::get_object_type(void) const
+int Argument::get_object_type(void) const
 {
     return m_type_object;
 }

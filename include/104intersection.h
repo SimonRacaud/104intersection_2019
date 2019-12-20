@@ -5,12 +5,22 @@
 ** header
 */
 
-#ifndef H_INTERSECTION
-#define H_INTERSECTION
+#ifndef H_104INTERSECTION
+#define H_104INTERSECTION
 
 #define EXIT_ERROR 84
 
-#include "arguments.h"
+#define SPHERE 1
+#define CYLINDER 2
+#define CONE 3
+
+typedef struct coord {
+    double x;
+    double y;
+    double z;
+} coord_t;
+
+#include "argument.h"
 #include "intersection.h"
 
 #include <iostream>

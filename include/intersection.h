@@ -9,26 +9,31 @@
 #define H_INTERSECTION
 
 #include "104intersection.h"
+#include <vector>
+#include <cmath>
+
+#define SQRT(nbr) (nbr * nbr)
+
+class Argument;
 
 class Intersection
 {
     public:
         Intersection(void);
-        Intersection(Arguments *arg);
-        int calcul_abc(Arguments *arg);
-        int calcul_lambda(int a, int b, int c);
-        int calcul_point(double lambda, Arguments *arg);
+        ~Intersection(void) = default;
+        int compute(Argument &arg);
 
     private:
-        int calcul_abc_cylinder(Arguments *arg);
-        int calcul_abc_sphere(Arguments *arg);
-        int calcul_abc_cone(Arguments *arg);
-        Arguments *m_arg;
-        int m_a;
-        int m_b;
-        int m_c;
-        double m_point01[3];
-        double m_point02[3];
+        int calcul_lambda(int a, int b, int c);
+        int calcul_point(double lambda, Argument &arg);
+        int calcul_abc(Argument &arg);
+        int calcul_abc_cylinder(Argument &arg);
+        int calcul_abc_sphere(Argument &arg);
+        int calcul_abc_cone(Argument &arg);
+        double m_a;
+        double m_b;
+        double m_c;
+        std::vector<double [3]> m_points;
 };
 
 #endif

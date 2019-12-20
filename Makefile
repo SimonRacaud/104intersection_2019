@@ -8,7 +8,8 @@
 DSRC	=	./src/
 
 SRC	=	$(DSRC)main.cpp		\
-		$(DSRC)arguments.cpp \
+		$(DSRC)argument.cpp \
+		$(DSRC)intersection.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 
@@ -22,7 +23,7 @@ $(NAME):	$(OBJ)
 	g++ -o $(NAME) $(OBJ)
 
 clean:
-	rm -f  $(OBJ)
+	rm -f $(OBJ)
 	rm -f *.gcda
 	rm -f *.gcno
 

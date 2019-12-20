@@ -28,13 +28,19 @@ int usage(int status)
 
 int main(int argc, char **argv)
 {
-    Arguments arg;
+    Argument arg;
     Intersection intersection;
 
     if (argc == 2 && !strcmp(argv[1], "-h"))
         return usage(EXIT_SUCCESS);
     if (arg.set_arguments(argc, argv) == EXIT_ERROR) {
         return usage(EXIT_ERROR);
+    } else {
+        if (intersection.compute(arg) == EXIT_ERROR) {
+            return EXIT_ERROR;
+        } else {
+            // DISPLAY
+        }
     }
     return EXIT_SUCCESS;
 }

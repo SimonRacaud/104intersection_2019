@@ -26,6 +26,11 @@ int usage(int status)
     return status;
 }
 
+void debug_display(const char *label, const coord_t *coord)
+{
+    printf("%s: x %f y %f z %f \n", label, coord->x, coord->y, coord->z);
+}
+
 int main(int argc, char **argv)
 {
     Argument arg;

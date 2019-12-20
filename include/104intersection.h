@@ -26,4 +26,6 @@ typedef struct coord {
 #include <iostream>
 #include <string>
 
+void debug_display(const char *label, const coord_t *coord);
+
 #endif

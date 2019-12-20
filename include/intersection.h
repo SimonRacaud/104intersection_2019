@@ -12,7 +12,7 @@
 #include <vector>
 #include <cmath>
 
-#define SQRT(nbr) (nbr * nbr)
+#define SQR(nbr) (nbr * nbr)
 
 class Argument;
 
@@ -24,8 +24,8 @@ class Intersection
         int compute(Argument &arg);
 
     private:
-        int calcul_lambda(int a, int b, int c);
-        int calcul_point(double lambda, Argument &arg);
+        int calcul_lambda(double a, double b, double c, Argument &arg);
+        int add_point(double lambda, Argument &arg);
         int calcul_abc(Argument &arg);
         int calcul_abc_cylinder(Argument &arg);
         int calcul_abc_sphere(Argument &arg);
@@ -33,7 +33,7 @@ class Intersection
         double m_a;
         double m_b;
         double m_c;
-        std::vector<double [3]> m_points;
+        std::vector<coord_t> m_points;
 };
 
 #endif

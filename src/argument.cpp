@@ -49,7 +49,7 @@ int Argument::convert_and_set_arguments(char **argv)
     m_type_object = atoi(argv[1]);
     m_point.x = atoi(argv[2]);
     m_point.y = atoi(argv[3]);
-    m_point.y = atoi(argv[4]);
+    m_point.z = atoi(argv[4]);
     m_vector.x = atoi(argv[5]);
     m_vector.y = atoi(argv[6]);
     m_vector.z = atoi(argv[7]);

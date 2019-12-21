@@ -61,6 +61,14 @@ int Argument::check_arguments_value(void) const
 {
     if (m_type_object > 3 || m_type_object < 1)
         return EXIT_ERROR;
+    else if (m_radius_angle <= 0) {
+        return EXIT_ERROR;
+    }
+    if (m_vector.x == 0 && m_vector.y == 0 && m_vector.z == 0) {
+        return EXIT_ERROR;
+    } else if (m_type_object == CONE && m_radius_angle >= 90) {
+        return EXIT_ERROR;
+    }
     return EXIT_SUCCESS;
 }
 

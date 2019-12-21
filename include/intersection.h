@@ -25,6 +25,8 @@ class Intersection
         int display(void);
 
     private:
+        int check_cylinder_infinite_points(Argument &arg);
+        int check_cone_infinite_points(Argument &arg);
         int calcul_lambda(double a, double b, double c, Argument &arg);
         int add_point(double lambda, Argument &arg);
         int calcul_abc(Argument &arg);

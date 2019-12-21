@@ -47,9 +47,11 @@ void Intersection::display_line_two(void)
 
 void Intersection::display_intersection(void)
 {
-    if (m_points.size() == 0) {
+    int nbr_points = m_points.size();
+
+    if (nbr_points == 0) {
         printf("No intersection point.\n");
-    } else if (m_points.size() > 0) {
+    } else if (nbr_points == 1 || nbr_points == 2) {
         printf("%lu intersection points:\n", m_points.size());
         for (unsigned int i = 0; i < m_points.size(); i++) {
             printf("(%.3f, %.3f, %.3f)\n", m_points[i].x, m_points[i].y, m_points[i].z);

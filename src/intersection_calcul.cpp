@@ -24,7 +24,7 @@ int Intersection::calcul_lambda(double a, double b, double c, Argument &arg)
     } else {
         lambda[0] = ((-b) + sqrt(delta)) / (2 * a);
         lambda[1] = ((-b) - sqrt(delta)) / (2 * a);
-        if (round(delta * 100) / 100 != 484)
+        if (round(delta * 10) / 10 != 484)
             add_point(lambda[0], arg);
         add_point(lambda[1], arg);
     }

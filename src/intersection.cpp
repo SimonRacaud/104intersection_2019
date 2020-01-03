@@ -90,12 +90,11 @@ int Intersection::check_cylinder_infinite_points(Argument &arg)
 
 int Intersection::check_cone_infinite_points(Argument &arg)
 {
-    const coord_t *point = arg.get_point();
-    const coord_t *vect = arg.get_vector();
-    double tan_angle = tan((90 - arg.get_radius_angle()) * (3.14159f / 180.0f));
+    //const coord_t *point = arg.get_point();
+    //const coord_t *vect = arg.get_vector();
+    //double tan_angle = tan((90 - arg.get_radius_angle()) * (3.14159f / 180.0f));
     int null_counter = 0;
     double result;
-    //printf("angle %f \n", tan_angle);
 
     if (calcul_abc(arg) == EXIT_ERROR)
         return EXIT_SUCCESS;

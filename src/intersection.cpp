@@ -97,10 +97,11 @@ int Intersection::check_cone_infinite_points(Argument &arg)
     double result;
     //printf("angle %f \n", tan_angle);
 
+    if (calcul_abc(arg) == EXIT_ERROR)
+        return EXIT_SUCCESS;
     for (int i = 1; i <= 3; i++) {
-        result = (SQR(point->x + i * vect->x) + SQR(point->y + i * vect->y) - (SQR(point->z + i * vect->z) / SQR(tan_angle)));
-        //printf("result %f \n", result);
-        result = round(result * 10000) / 10000;
+        result = m_a * (i * i) + m_b * i + m_c;
+        result = ceil(result * 1000) / 1000;
         if (result == 0) {
             null_counter++;
         }

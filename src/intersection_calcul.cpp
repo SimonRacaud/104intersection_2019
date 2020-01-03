@@ -15,7 +15,7 @@ int Intersection::calcul_lambda(double a, double b, double c, Argument &arg)
     double lambda[2];
 
     //printf("ABC: %f %f %f \n", a, b, c);
-    //printf("DELTA: %f \n\n", delta); // DEBUG
+    //printf("DELTA: %.10f \n\n", delta); // DEBUG
     if (delta < 0)
         return EXIT_SUCCESS;
     else if (delta == 0) {
@@ -24,6 +24,7 @@ int Intersection::calcul_lambda(double a, double b, double c, Argument &arg)
     } else {
         lambda[0] = ((-b) + sqrt(delta)) / (2 * a);
         lambda[1] = ((-b) - sqrt(delta)) / (2 * a);
+        //printf("%f %f \n", lambda[0], lambda[1]);
         add_point(lambda[0], arg);
         add_point(lambda[1], arg);
     }

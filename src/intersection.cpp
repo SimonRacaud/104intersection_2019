@@ -77,7 +77,8 @@ int Intersection::check_cylinder_infinite_points(Argument &arg)
     const coord_t *vect = arg.get_vector();
     double distance_origine_point;
 
-    distance_origine_point = round(sqrt(SQR(point->x) + SQR(point->y) + SQR(point->z)));
+    distance_origine_point = (sqrt(SQR(point->x) + SQR(point->y) + SQR(point->z)));
+    distance_origine_point = round(distance_origine_point * 10) / 10;
     if (distance_origine_point == arg.get_radius_angle()) {
         if (vect->z != 0 && vect->y == 0 && vect->x == 0) {
             for (int i = 0; i < 3; i++)
